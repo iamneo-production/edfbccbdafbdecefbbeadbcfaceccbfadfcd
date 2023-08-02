@@ -11,13 +11,21 @@ export class AppComponent {
   fromCurrency: any
   toCurrency: any
   amount:any
+
+
   constructor(public fb: FormBuilder) { }
   CurrencyForm = this.fb.group({
     fromCurrency: [''],
-    amount: [''],
-    toCurrency: ['']
+    toCurrency: [''],
+ amount: [''],
   })
   onSubmitt() {
+
+    var firstamount= this.CurrencyForm.value.fromCurrency
+    var secondamount = this.CurrencyForm.value.toCurrency
+ 
+    this.resValue = (firstamount *  1) * (secondamount *1 );
+    
     this.amount=this.CurrencyForm.get('amount').value;  
     this.fromCurrency=this.CurrencyForm.get('fromCurrency').value;
     this.toCurrency=this.CurrencyForm.get('toCurrency').value;
