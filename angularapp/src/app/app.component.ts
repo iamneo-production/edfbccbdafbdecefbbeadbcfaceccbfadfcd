@@ -17,22 +17,25 @@ export class AppComponent {
   CurrencyForm = this.fb.group({
     fromCurrency: [''],
     toCurrency: [''],
- amount: [''],
-  })
+       amount: [''],
+      })
   onSubmitt() {
-
-    var firstamount= this.CurrencyForm.value.fromCurrency
-    var secondamount = this.CurrencyForm.value.toCurrency
  
-    this.resValue = (firstamount *  1) * (secondamount *1 );
-    
-    this.amount=this.CurrencyForm.get('amount').value;  
-    this.fromCurrency=this.CurrencyForm.get('fromCurrency').value;
-    this.toCurrency=this.CurrencyForm.get('toCurrency').value;
+    // this.resValue = (this.CurrencyForm.value.fromCurrency *  1) * (this.CurrencyForm.value.toCurrency *1 );
+
+    this.amount=this.CurrencyForm.value.amount;  
+    this.fromCurrency=this.CurrencyForm.value.fromCurrency;
+    this.toCurrency=this.CurrencyForm.value.toCurrency;
     //this.amount=
-    //this.resValue='1.00';
-    this.resValue=(this.toCurrency/this.fromCurrency)*this.amount;
+this.resValue='1.00';
+
+
+  
+    this.resValue=(this.toCurrency/this.fromCurrency) * this.amount;
     this.resValue=Math.round(this.resValue);
     this.resValue=parseFloat(this.resValue).toFixed(2);
+
+
+
   }
 }
