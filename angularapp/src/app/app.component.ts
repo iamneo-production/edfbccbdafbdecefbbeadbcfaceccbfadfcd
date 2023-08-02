@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from "@angular/forms";
-import { DOCUMENT } from "@angular/common";
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,15 +29,10 @@ export class AppComponent {
     this.fromCurrency=this.CurrencyForm.value.fromCurrency;
     this.toCurrency=this.CurrencyForm.value.toCurrency;
     //this.amount=
-this.resValue='1.00';
+// this.resValue='1.00';
 
-
-  
     this.resValue=(this.toCurrency/this.fromCurrency) * this.amount;
     this.resValue=Math.round(this.resValue);
     this.resValue=parseFloat(this.resValue).toFixed(2);
-
-
-
   }
 }
